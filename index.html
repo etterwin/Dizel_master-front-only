@@ -36,7 +36,6 @@
             crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js"></script>
 
-
 </head>
 <body>
 
@@ -69,7 +68,30 @@
             </ul>
         </nav>
 
+        <nav class="nav-mobil">
+
+            <ul class="list-m">
+                <li class="item-m">
+                    <a href="#">
+                        <img src="assets/pictures/svg/Logo-white.svg" class="header-item-img"/>
+                    </a>
+                </li>
+                <li class="item-m">
+                    <ul class="sub-list-m">
+                        <li class="sub-item-m">Дизель — <strong>МАСТЕР</strong></li>
+                        <li class="sub-item-m">8 910 395 25 55</li>
+                    </ul>
+                </li>
+                <li class="item-m mobil-menu">
+                    <a href="#" class="menu-btn"></a>
+                </li>
+            </ul>
+
+        </nav>
+
         <section class="header__container">
+
+            <img src="assets/pictures/png/header-img.png" class="header-img-m"/>
 
             <h1 class="header-caption">Диагностика и ремонт
                 <br>дизельного двигателя</h1>
@@ -394,15 +416,17 @@
             </div>
         </div>
 
-        <!-- Карусель сверстана по часовой стрелке, начиная с самого верхнего элемента -->
-        <section class="carousel__container">
+        <!-- Карусель сверстана по часовой стрелке, начиная с самого верхнего элемента
+             Если тебе нужно заменить картинки, открой папку assets/pictures/carousel и замени картинки, сохраняя
+             порядковые номера -->
+        <section class="carousel__container" id="app">
 
             <!-- First item -->
-            <div class="carousel__item" onclick="carouselChange(this)">
+            <div class="carousel__item" @click="switchView('first')">
                 <h3 class="carousel-caption">Капитальный ремонт ДВС</h3>
                 <div class="carousel-btn__container">
                     <div class="carousel-btn-img-wrapper">
-                        <img src="assets/pictures/png/photo-1.jpg" class="carousel-btn-img"/>
+                        <img src="assets/pictures/carousel/1.png" class="carousel-btn-img"/>
                     </div>
                     <img src="assets/pictures/png/gear.png" class="carousel-btn-wrapper"/>
                 </div>
@@ -410,10 +434,10 @@
             <!-- end first item -->
 
             <!-- Second item -->
-            <div class="carousel__item" onclick="carouselChange(this)">
+            <div class="carousel__item" @click="switchView('second')">
                 <div class="carousel-btn__container">
                     <div class="carousel-btn-img-wrapper">
-                        <img src="assets/pictures/png/photo-2.jpg" class="carousel-btn-img"/>
+                        <img src="assets/pictures/carousel/2.png" class="carousel-btn-img"/>
                     </div>
                     <img src="assets/pictures/png/gear.png" class="carousel-btn-wrapper"/>
                 </div>
@@ -422,10 +446,10 @@
             <!-- end second item -->
 
             <!-- Third item -->
-            <div class="carousel__item" onclick="carouselChange(this)">
+            <div class="carousel__item" @click="switchView('third')">
                 <div class="carousel-btn__container">
                     <div class="carousel-btn-img-wrapper">
-                        <img src="assets/pictures/png/photo-3.JPG" class="carousel-btn-img"/>
+                        <img src="assets/pictures/carousel/3.png" class="carousel-btn-img"/>
                     </div>
                     <img src="assets/pictures/png/gear.png" class="carousel-btn-wrapper"/>
                 </div>
@@ -434,10 +458,10 @@
             <!-- end third item -->
 
             <!-- Fourth item -->
-            <div class="carousel__item" onclick="carouselChange(this)">
+            <div class="carousel__item" @click="switchView('fourth')">
                 <div class="carousel-btn__container">
                     <div class="carousel-btn-img-wrapper">
-                        <img src="assets/pictures/png/photo-4.jpg" class="carousel-btn-img"/>
+                        <img src="assets/pictures/carousel/4.png" class="carousel-btn-img"/>
                     </div>
                     <img src="assets/pictures/png/gear.png" class="carousel-btn-wrapper"/>
                 </div>
@@ -446,10 +470,10 @@
             <!-- end fourth item -->
 
             <!-- Fifth item -->
-            <div class="carousel__item" onclick="carouselChange(this)">
+            <div class="carousel__item" @click="switchView('fifth')">
                 <div class="carousel-btn__container">
                     <div class="carousel-btn-img-wrapper">
-                        <img src="assets/pictures/png/photo-1.jpg" class="carousel-btn-img"/>
+                        <img src="assets/pictures/carousel/5.png" class="carousel-btn-img"/>
                     </div>
                     <img src="assets/pictures/png/gear.png" class="carousel-btn-wrapper"/>
                 </div>
@@ -458,11 +482,11 @@
             <!-- end fifth item -->
 
             <!-- Sixth item -->
-            <div class="carousel__item" onclick="carouselChange(this)">
+            <div class="carousel__item" @click="switchView('sixth')">
                 <h3 class="carousel-caption">ТО и замена масла</h3>
                 <div class="carousel-btn__container">
                     <div class="carousel-btn-img-wrapper">
-                        <img src="assets/pictures/png/photo-2.jpg" class="carousel-btn-img"/>
+                        <img src="assets/pictures/carousel/6.png" class="carousel-btn-img"/>
                     </div>
                     <img src="assets/pictures/png/gear.png" class="carousel-btn-wrapper"/>
                 </div>
@@ -470,11 +494,11 @@
             <!-- end sixth item -->
 
             <!-- Seventh item -->
-            <div class="carousel__item" onclick="carouselChange(this)">
+            <div class="carousel__item" @click="switchView('seventh')">
                 <h3 class="carousel-caption">Ремонт тормозной и рулевой системы</h3>
                 <div class="carousel-btn__container">
                     <div class="carousel-btn-img-wrapper">
-                        <img src="assets/pictures/png/photo-3.JPG" class="carousel-btn-img"/>
+                        <img src="assets/pictures/carousel/7.png" class="carousel-btn-img"/>
                     </div>
                     <img src="assets/pictures/png/gear.png" class="carousel-btn-wrapper"/>
                 </div>
@@ -482,11 +506,11 @@
             <!-- end seventh item -->
 
             <!-- Eighth item -->
-            <div class="carousel__item" onclick="carouselChange(this)">
+            <div class="carousel__item" @click="switchView('eighth')">
                 <h3 class="carousel-caption">Ремонт КПП и редуктора</h3>
                 <div class="carousel-btn__container">
                     <div class="carousel-btn-img-wrapper">
-                        <img src="assets/pictures/png/photo-4.jpg" class="carousel-btn-img"/>
+                        <img src="assets/pictures/carousel/8.png" class="carousel-btn-img"/>
                     </div>
                     <img src="assets/pictures/png/gear.png" class="carousel-btn-wrapper"/>
                 </div>
@@ -494,11 +518,11 @@
             <!-- end eighth item -->
 
             <!-- Ninth item -->
-            <div class="carousel__item" onclick="carouselChange(this)">
+            <div class="carousel__item" @click="switchView('ninth')">
                 <h3 class="carousel-caption">Автоэлектрика</h3>
                 <div class="carousel-btn__container">
                     <div class="carousel-btn-img-wrapper">
-                        <img src="assets/pictures/png/photo-1.jpg" class="carousel-btn-img"/>
+                        <img src="assets/pictures/carousel/9.png" class="carousel-btn-img"/>
                     </div>
                     <img src="assets/pictures/png/gear.png" class="carousel-btn-wrapper"/>
                 </div>
@@ -509,8 +533,7 @@
             <div class="carousel__item">
                 <div class="carousel-btn__container">
                     <div class="carousel-img-wrapper">
-                        <img src="assets/pictures/png/photo-1.jpg" class="carousel-img"
-                             id="carousel-img"/>
+                        <component :is="currentView"></component>
                     </div>
                     <img src="assets/pictures/png/gear.png" class="carousel-btn-wrapper"/>
                 </div>
@@ -519,6 +542,44 @@
 
         </section>
         <!-- Конец карусели -->
+
+        <!-- Шаблон для карусели. Не изменять -->
+        <template id="first-template">
+            <img src="assets/pictures/carousel/1.png" class="carousel-img" />
+        </template>
+
+        <template id="second-template">
+            <img src="assets/pictures/carousel/2.png" class="carousel-img" />
+        </template>
+
+        <template id="third-template">
+            <img src="assets/pictures/carousel/3.png" class="carousel-img" />
+        </template>
+
+        <template id="fourth-template">
+            <img src="assets/pictures/carousel/4.png" class="carousel-img" />
+        </template>
+
+        <template id="fifth-template">
+            <img src="assets/pictures/carousel/5.png" class="carousel-img" />
+        </template>
+
+        <template id="sixth-template">
+            <img src="assets/pictures/carousel/6.png" class="carousel-img" />
+        </template>
+
+        <template id="seventh-template">
+            <img src="assets/pictures/carousel/7.png" class="carousel-img" />
+        </template>
+
+        <template id="eighth-template">
+            <img src="assets/pictures/carousel/8.png" class="carousel-img" />
+        </template>
+
+        <template id="ninth-template">
+            <img src="assets/pictures/carousel/9.png" class="carousel-img" />
+        </template>
+        <!-- Конец шаблонов -->
 
         <div class="main__container">
 
@@ -536,13 +597,13 @@
 
                 <div class="field-wrapper">
                     <div class="field__container">
-                        <input type="text" class="field" id="name_field" name="detail-name" placeholder="Введите название детали"/>
+                        <input type="text" class="field" name="detail-name" placeholder="Введите название детали"/>
                     </div>
                 </div>
 
                 <div class="field-wrapper">
                     <div class="field__container">
-                        <input type="tel" class="field" id="number_field" name="user-number" placeholder="Введите Ваш номер"/>
+                        <input type="tel" class="field" name="user-number" placeholder="Введите Ваш номер"/>
                     </div>
                 </div>
 
