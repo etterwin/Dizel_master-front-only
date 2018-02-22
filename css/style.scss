@@ -1288,7 +1288,6 @@ body .container {
   &:hover .car__block {
     opacity: 1;
     @media screen and (min-width: 993px) {
-      left: 10%;
       right: -30%;
     }
     @media screen and (min-width: 768px) and (max-width: 992px) {
